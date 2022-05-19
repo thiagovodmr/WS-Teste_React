@@ -1,0 +1,27 @@
+.nav-link{
+    text-decoration: none;
+    color:white;
+}
+
+.ul-nav{
+    margin: 5px;
+    list-style: none;
+}
+
+.logo-home{
+    text-decoration: none;
+    font-size: 30px;
+    margin-left: 10px;
+    color: white !important;
+}
+
+.navbar{
+    margin-bottom: 2%;
+}
+
+hr{
+    border-width: 0; 
+    height: 2px !important;
+    margin-top: 50px !important;
+    margin-bottom: 50px !important;
+}

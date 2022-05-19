@@ -1,0 +1,31 @@
+.nav-link{
+    text-decoration: none;
+    color:white;
+}
+
+.ul-nav{
+    margin: 5px;
+    list-style: none;
+    flex-direction: row;
+    color: white;
+}
+
+.logo-home{
+    text-decoration: none;
+    font-size: 30px;
+    margin-left: 10px;
+    color: white !important;
+}
+
+.navbar{
+    margin-bottom: 2%;
+}
+
+.nav-link {
+    color: white !important;
+    padding: 5px !important;
+}
+
+.nav-item{
+    margin: 2px;;
+}

@@ -1,0 +1,4 @@
+.carros-antigos-lista{
+    max-height: 250px;
+    overflow: auto;
+}

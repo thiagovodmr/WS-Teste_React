@@ -9,18 +9,32 @@ function PageList(){
 
     useEffect(()=>{
       api.get("/")
-      .then(response=> { setCarros(response.data);
+      .then(response=> { 
+        const data = response.data;
+        data.sort((a,b) => a.marca_id - b.marca_id)
+        setCarros(data);
       })
     },[])
 
     return (
+      <div>
+         <nav className="navbar navbar-light bg-dark">
+              <Link className="logo-home" to="#">Listagem completa de carros</Link>
+              <ul className="ul-nav navbar-nav">
+                <li className="nav-item">
+                    <Link className="nav-link btn btn-primary" to="/">Home</Link>
+                </li>
+                <li className="nav-item">
+                    <Link className="nav-link btn btn-success" to="/carro/novo">Cadastrar novos veículos</Link>
+                </li>
+            </ul> 
+        </nav>
+
+      
         <div className="container">
-            <h2>Listagem de carros com seus modelos e marcas</h2>
-            <header>  
-              <Link className="btn btn-success" to="/carro/novo/0">Cadastrar novos veículos</Link>  
-            </header>
-            <ListaCompletaCarros carros={carros}/>
+            <ListaCompletaCarros carros={carros} exibirAcoes={true}/>
         </div>
+      </div>
     )
 }
 
