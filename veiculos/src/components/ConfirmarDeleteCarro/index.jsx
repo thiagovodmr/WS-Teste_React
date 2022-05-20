@@ -11,7 +11,10 @@ function ConfirmarDeleteCarro(){
     async function deleteAluno(){
         await api.delete(`carros/${carroId}`)
         .then(()=> navigate("/listagem"))
-        .catch(erro=> console.log(erro));
+        .catch(error => { 
+            const erros = error.response.data.errors
+            erros.map((erro)=> alert(erro));  
+        });
     }
 
     return (

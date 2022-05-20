@@ -12,11 +12,13 @@ function NovoCarro(){
     const [combustivel, setCombustivel] = useState("")
 
     const [modelos, setModelos] = useState([]);
+
     const navigate = useNavigate();
 
     useEffect(()=>{
         api.get("/modelos")
         .then(response=> { setModelos(response.data); })
+
     }, [])
 
     async function cadastrarCarro(event){
@@ -31,13 +33,17 @@ function NovoCarro(){
         
         await api.post('carros',data)
         .then(() => navigate("/listagem"))
-        .catch(error => console.log(error))
+        .catch(error => {
+            const erros = error.response.data.errors
+            erros.map((erro)=> alert(erro)); 
+        })
     }
+
 
     return (
         <div className="container form-cadastro">
             <h1 className="text-center">Cadastrar veículo</h1>
-
+            
             <form className="form-group" onSubmit={cadastrarCarro}>
                 <label>Modelo</label><br/>
                 <select name="modeloId" className="form-control" onChange={e => setModeloId(e.target.value) }>

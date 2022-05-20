@@ -28,7 +28,10 @@ function AtualizarCarro(){
 
         await api.put(`carros/${carroId}`, data)
         .then(() => navigate("/listagem"))
-        .catch(error => console.log(error))
+        .catch(error => {
+            const erros = error.response.data.errors
+            erros.map((erro)=> alert(erro)); 
+        })
     }
 
     return (

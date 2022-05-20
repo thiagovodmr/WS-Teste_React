@@ -13,4 +13,9 @@ label{
 .btns{
     margin-top: 20px;
 }
-
+span{
+    color: black !important;
+}
+.close{
+    border-radius: 5px;
+}
